@@ -14,6 +14,10 @@ App.IndexController = Ember.ObjectController.extend ({
       this.set('name', stageNameParts[2]);
     }
 
+    setTimeout(function() {
+      this.set('name', 'Whitney');
+    }.bind(this), 2000);
+
     return this.get('favoriteColor') + ' ' + this.get('streetName') + ' ' + this.get('name')
   }.property('favoriteColor', 'streetName', 'name')
 });
