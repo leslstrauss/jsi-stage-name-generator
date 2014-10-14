@@ -6,8 +6,8 @@ App.IndexController = Ember.ObjectController.extend ({
   streetName: '',
   name: '',
 
-  stageName: function(key, value, previousValue) {
-    if (arguments > 2) {
+  stageName: function(key, value) {
+    if (arguments.length > 1) {
       var stageNameParts = value.split(/\s+/);
       this.set('favoriteColor', stageNameParts[0]);
       this.set('streetName', stageNameParts[1]);
@@ -15,5 +15,5 @@ App.IndexController = Ember.ObjectController.extend ({
     }
 
     return this.get('favoriteColor') + ' ' + this.get('streetName') + ' ' + this.get('name')
-    }.property('favoriteColor', 'streetName', 'name')
+  }.property('favoriteColor', 'streetName', 'name')
 });
